@@ -13,7 +13,7 @@ async function main() {
 
   const allGolfCourseUrlPaths = data.split("\r\n");
 
-  paths = allGolfCourseUrlPaths.slice(0, 20);
+  paths = allGolfCourseUrlPaths.slice(16775);
 
   for (const path of paths) {
     await page.goto("https://www.pga.com" + path);
@@ -82,9 +82,8 @@ async function main() {
     }
 
     golfCourseJson = `${JSON.stringify(courseJson)}\r\n`;
-    console.log(golfCourseJson);
 
-    // await fs.appendFile("GolfCourseJsonData.txt", golfCourseJson);
+    await fs.appendFile("GolfCourseJsonData.txt", golfCourseJson);
   }
 
   await browser.close();
