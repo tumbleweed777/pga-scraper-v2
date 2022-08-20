@@ -13,7 +13,7 @@ async function main() {
 
   const allGolfCourseUrlPaths = data.split("\r\n");
 
-  paths = allGolfCourseUrlPaths.slice(16775);
+  paths = allGolfCourseUrlPaths.slice();
 
   for (const path of paths) {
     await page.goto("https://www.pga.com" + path);
